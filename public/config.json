@@ -1,6 +1,6 @@
 {
   "avatar": {
-    "src": "/avatar.jpg",
+    "src": "/avatar.png",
     "alt": "Avatar"
   },
   "title": "Sergey Fixov | VIP 🏆",
@@ -19,13 +19,13 @@
   ],
   "button": {
     "text": "Join Channel",
-    "url": "https://t.me/your_channel",
+    "url": "https://t.me/+S-YutQ74vQFkZGMy",
     "newTab": true
   },
   "socials": [
     {
       "type": "telegram",
-      "url": "https://t.me/your_channel"
+      "url": "https://t.me/+S-YutQ74vQFkZGMy"
     },
     {
       "type": "instagram",
