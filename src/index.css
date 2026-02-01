@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Telegram-inspired Design System */
+
+@layer base {
+  :root {
+    --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+    /* Dark theme by default (Telegram style) */
+    --background: 220 15% 8%;
+    --foreground: 0 0% 98%;
+
+    --card: 220 15% 12%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 220 15% 10%;
+    --popover-foreground: 0 0% 98%;
+
+    /* Telegram Blue Accent */
+    --primary: 200 85% 55%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 220 15% 18%;
+    --secondary-foreground: 0 0% 90%;
+
+    --muted: 220 15% 20%;
+    --muted-foreground: 220 10% 60%;
+
+    --accent: 200 85% 55%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 220 15% 20%;
+    --input: 220 15% 20%;
+    --ring: 200 85% 55%;
+
+    --radius: 1rem;
+
+    /* Custom tokens */
+    --glass-bg: 220 15% 15% / 0.6;
+    --glass-border: 220 15% 25% / 0.5;
+    --pattern-opacity: 0.03;
+    --card-shadow: 0 25px 50px -12px hsl(0 0% 0% / 0.5);
+    --glow-color: 200 85% 55% / 0.3;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    font-family: var(--font-sans);
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+  }
+}
+
+/* Telegram Pattern Background */
+@layer components {
+  .telegram-pattern {
+    background-color: hsl(var(--background));
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+
+  .glass-card {
+    background: hsl(var(--glass-bg));
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid hsl(var(--glass-border));
+    box-shadow: var(--card-shadow);
+  }
+
+  .btn-glow {
+    box-shadow: 0 0 30px hsl(var(--glow-color));
+    transition: all 0.3s ease;
+  }
+
+  .btn-glow:hover {
+    box-shadow: 0 0 50px hsl(var(--glow-color)), 0 0 80px hsl(var(--glow-color));
+    transform: translateY(-2px);
+  }
+
+  .social-icon {
+    @apply w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300;
+    background: hsl(var(--secondary));
+  }
+
+  .social-icon:hover {
+    background: hsl(var(--primary));
+    transform: scale(1.1);
+  }
+
+  .stat-badge {
+    @apply px-3 py-1.5 rounded-full text-sm font-medium;
+    background: hsl(var(--secondary));
+  }
+
+  .online-dot {
+    @apply w-2 h-2 rounded-full;
+    background: hsl(142 76% 50%);
+    animation: pulse-dot 2s infinite;
+  }
+
+  @keyframes pulse-dot {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.5;
+    }
+  }
+
+  @keyframes float-in {
+    0% {
+      opacity: 0;
+      transform: translateY(30px) scale(0.95);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+
+  .animate-float-in {
+    animation: float-in 0.6s ease-out forwards;
+  }
+
+  @keyframes shimmer {
+    0% {
+      background-position: -200% 0;
+    }
+    100% {
+      background-position: 200% 0;
+    }
+  }
+
+  .avatar-ring {
+    @apply rounded-full p-1;
+    background: linear-gradient(135deg, hsl(var(--primary)), hsl(280 80% 60%), hsl(var(--primary)));
+    background-size: 200% 200%;
+    animation: shimmer 3s linear infinite;
+  }
+}

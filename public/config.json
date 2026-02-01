@@ -1,0 +1,45 @@
+{
+  "avatar": {
+    "src": "/avatar.jpg",
+    "alt": "Avatar"
+  },
+  "title": "Sergey Fixov | VIP 🏆",
+  "members": {
+    "value": "5.3K",
+    "label": "members"
+  },
+  "online": {
+    "value": "1.8K",
+    "label": "online"
+  },
+  "descriptionLines": [
+    "Earn from $20,000 per month.",
+    "Only high-quality fixed matches.",
+    "Before asking questions, read the pinned message."
+  ],
+  "button": {
+    "text": "Join Channel",
+    "url": "https://t.me/your_channel",
+    "newTab": true
+  },
+  "socials": [
+    {
+      "type": "telegram",
+      "url": "https://t.me/your_channel"
+    },
+    {
+      "type": "instagram",
+      "url": "https://instagram.com/"
+    },
+    {
+      "type": "youtube",
+      "url": "https://youtube.com/"
+    }
+  ],
+  "theme": {
+    "accentHsl": "200 85% 55%",
+    "backgroundHsl": "220 15% 8%",
+    "cardHsl": "220 15% 12%",
+    "patternOpacity": 0.03
+  }
+}
